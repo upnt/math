@@ -1,29 +1,26 @@
 # include<iostream>
 # include<vector>
-# include"math.hpp"
+# include"coin_toss.hpp"
+
+double get_average(ITrial&, int);
 
 int main()
 {
-    Math math;
-    std::vector<double> predicts;
-
+    CoinToss trial;
     int num = 0;
-
     std::cout << "num: ";
     std::cin >> num;
 
-    for (int i = 0; i < num; i++)
-        predicts.push_back((double)math.toss());
+    std::cout << 11.0 / 16.0 << std::endl;
+    std::cout << get_average(trial, num) << std::endl;
+}
 
+double get_average(ITrial& trial, int num)
+{
     double sum = 0;
 
-    for(const auto& predict : predicts)
-    {
-	std::cout << predict << std::endl;
-        sum += predict;
-    }
+    for (int i = 0; i < num; i++)
+        sum += trial();
 
-    std::cout << 11.0 / 16.0 << std::endl;
-    std::cout << sum / predicts.size() << std::endl;
-
+    return sum / num;
 }
