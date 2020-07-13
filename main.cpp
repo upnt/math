@@ -5,13 +5,14 @@
 
 int main()
 {
-    CoinToss trial;
-    Statistics statistics = trial;
-
     int num = 0;
     std::cout << "num: ";
     std::cin >> num;
 
-    std::cout << 11.0 / 16.0 << std::endl;
-    std::cout << statistics.average(num) << std::endl;
+    CoinToss trial;
+    Statistics statistics(trial, num);
+
+    std::cout << "real average:    " << trial.AVERAGE    << std::endl;
+    std::cout << "real dispersion: " << trial.DISPERSION << std::endl;
+    std::cout << statistics() << std::endl;
 }
