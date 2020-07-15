@@ -3,5 +3,5 @@
 class ITrial
 {
     public:
-        virtual double operator()() = 0;
+        virtual double operator()() const = 0;
 };

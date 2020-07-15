@@ -4,10 +4,12 @@
 class CoinToss : public ITrial
 {
     public:
-        static constexpr auto AVERAGE    = 0.685;
-        static constexpr auto DISPERSION = 1.5898;
-        double operator()();
+        CoinToss();
+        double operator()() const;
+        const double average;
+        const double dispersion;
+
     private:
-        double getMovement();
+        double getMovement() const;
 
 };

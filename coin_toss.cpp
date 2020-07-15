@@ -1,7 +1,13 @@
 # include<random>
 # include"coin_toss.hpp"
 
-double CoinToss::operator()()
+CoinToss::CoinToss() :
+    average(0.685), dispersion(1.598)
+{
+
+}
+
+double CoinToss::operator()() const
 {
     int place = 0;
     for(int i = 0; i < 5; i++)
@@ -17,7 +23,7 @@ double CoinToss::operator()()
     return place;
 }
 
-double CoinToss::getMovement()
+double CoinToss::getMovement() const
 {
 
     constexpr int MINUS = -1;
